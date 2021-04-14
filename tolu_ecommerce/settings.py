@@ -21,7 +21,7 @@ SECRET_KEY = '*qaoz^m*#b09tpa5m%cu03(&hpced5y*m0wl0&ttj7dwfr@v17'
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = [ '192.168.43.203', 'localhost:8000','127.0.0.1','tolu_ecommerce.herokuapp.com']
+ALLOWED_HOSTS = [ '192.168.43.203', 'localhost:8000','127.0.0.1','toluecommerce.herokuapp.com']
 
 
 # Application definition
