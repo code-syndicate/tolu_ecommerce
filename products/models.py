@@ -21,7 +21,7 @@ class Product(models.Model):
     price_per_unit = models.DecimalField(
         default=5000, decimal_places=2, max_digits=11)
     amount_in_stock = models.PositiveIntegerField(default=15)
-    slash_percentage = models.PositiveIntegerField(max_length=2, default=5)
+    slash_percentage = models.PositiveIntegerField( default=5)
     picture = models.ImageField(max_length=255, upload_to=handle_upload_2)
 
     @property

@@ -72,6 +72,10 @@ span{
 .col-2{
     flex-basis: 50%;
     min-width: 300px;
+    height: 700px;
+    /* height: auto; */
+    display:block;
+    overflow-y:scroll;
 }
 
 .col-2 img{
@@ -344,6 +348,15 @@ form .btn:focus{
         cursor: pointer;
     }
 }
+
+
+
+/* .LoginForm{
+    max-height: 700px;
+    height: auto;
+    display:block;
+    overflow:scroll;
+} */
 
 @media only screen and (max-width: 600px){
     .row{

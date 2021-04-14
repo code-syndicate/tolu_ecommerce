@@ -29,6 +29,9 @@ class User( AbstractBaseUser):
     date_joined = models.DateTimeField( auto_now  = True)
     last_modified = models.DateTimeField( auto_now= True)
     is_admin = models.BooleanField( default= False)
+    
+
+
 
 
     USERNAME_FIELD = 'email'
