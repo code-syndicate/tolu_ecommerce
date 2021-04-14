@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scsle=1.0">
+        <title>R&T</title>
+        <link rel="stylesheet" href="/static/logistics/css/login.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="/static/logistics/images/logo.jpg" width="125px">
+                    </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Produts</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="/static/logistics/images/cart.png" width="30px" height="30px">
+                 <img src="/static/logistics/images/men 2.png" class="menu-icon" onclick="menutoggle()" >
+                </div>
+            <div class="account-page">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="/static/logistics/images/image1.jpg" width="100%">
+                        </div>
+
+                        <div class="col-2">
+                            <div class="form-container">
+                                <div class="form-btn">
+                                    <span onclick="login()">Login</span>
+                                    <span onclick="register()">Register</span>
+                                    <hr id='Indicator'>
+                                </div>
+                                <form id="LoginForm">
+                                    <input type="text" placeholder="Username">
+                                    <input type="password" placeholder="password">
+                                    <button type="submit" class="btn">Login</button>
+                                </form>
+
+                                    <form id="RegForm">
+                                    <input type="text" placeholder="Username">
+                                    <input type="email" placeholder="email">
+                                    <input type="password" placeholder="Password">
+                                    <button type="submit" class="btn">Register</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                
+                    
+
+
+    <script >
+        var MenuItems=document.getElementById("MenuItems");
+        MenuItems.style.maxHeight ="0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight =="0px")
+                {
+                    MenuItems.style.maxHeight ="200px";
+
+                }
+            else
+                {
+                    MenuItems.style.maxHeight ="0px";
+
+                }
+            }
+
+    </script>
+
+
+    <script >
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator=document.getElementById("Indicator");
+
+            function register() {
+                RegForm.style.transform = "translateX(0px)";
+                LoginForm.style.transform = "translateX(0px)";
+                Indicator.style.transform = "translateX(100px)";
+            }
+            function login() { 
+                RegForm.style.transform = "translateX(300px)";
+                LoginForm.style.transform = "translateX(300px)";
+                Indicator.style.transform = "translateX(0px)";
+            }
+    </script>
+    </body>
+</html>

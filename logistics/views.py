@@ -16,4 +16,12 @@ class HomePageView(View):
         }
         return render( request, 'logistics/index.html', context )
 
+class LoginView(View):
+    def get(self,request):
+        return render( request, 'logistics/login.html')
+
+class SignUpView(View):
+    def post(self,request):
+        return render(request, 'logistics/signup.html')
+
 
