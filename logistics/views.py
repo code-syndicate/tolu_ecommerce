@@ -14,6 +14,6 @@ class HomePageView(View):
             'categories_2' : categories_2,
             'products' : products,
         }
-        return render( request, 'logistics/home.html', context )
+        return render( request, 'logistics/index.html', context )
 
 

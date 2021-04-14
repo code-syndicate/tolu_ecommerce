@@ -1,7 +1,7 @@
 """
 Django settings for tolu_ecommerce project.
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -15,9 +15,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*qaoz^m*#b09tpa5m%cu03(&hpced5y*m0wl0&ttj7dwfr@v17'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = [ '192.168.43.203', '127.0.0.1']
+# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
+ALLOWED_HOSTS = [ '192.168.43.203', 'localhost:8000','127.0.0.1','tolu_ecommerce.herokuapp.com']
 
 
 # Application definition
@@ -36,6 +40,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -119,3 +124,17 @@ AUTH_USER_MODEL = 'users.User'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'staticfiles/assets'
 MEDIA_URL = '/assets/' 
+
+
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE  = True
+    CSRF_COOKIE_SECURE = True
+
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+

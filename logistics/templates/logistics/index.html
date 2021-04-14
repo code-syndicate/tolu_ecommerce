@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scsle=1.0">
+        <title>R&T</title>
+        <link rel="stylesheet" href="/static/logistics/css/index.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="/static/logistics/images/logo.jpg" width="125px">
+                    </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Produts</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="/static/logistics/images/cart.png" width="30px" height="30px">
+                 <img src="/static/logistics/images/men 2.png" class="menu-icon" onclick="menutoggle()" >
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <h1>Give your <span>Wardrobe</span><br> a Facelift</h1> 
+                        <p>At R and T we are conscious of elevating African aesthetics through dressmaking sensibilities. Quality over Trends . Dressing Sustainably which can be an exiting adventure appearing simple but elegant.</p>
+                        <a href="" class="btn">Start now &#8594 </a>
+                    </div>
+                    <div class="col-2">
+                        <img src="/static/logistics/images/image1.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="page">Featured Products</h2>
+    <div class="categories">
+        <div class="row">
+            <div class="col-3">
+                <img src="/static/logistics/images/love.jpg" width="420px">
+            </div>
+            <div class="col-3">
+                <img src="/static/logistics/images/love(2).jpg" width="420px">
+            </div>
+            <div class="col-3">
+                <img src="/static/logistics/images/love (3).jpg" width="420px">
+            </div>
+        </div>
+    </div>  
+
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            
+            <div class="col-4">
+                    <img src="/static/logistics/images/page (1).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+            </div>
+             <div class="col-4">
+                    <img src="/static/logistics/images/page (2).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+            </div>
+             <div class="col-4">
+                    <img src="/static/logistics/images/page (1).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+                </div>
+             <div class="col-4">
+                    <img src="/static/logistics/images/page (2).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+                </div><div class="col-4">
+                    <img src="/static/logistics/images/page (1).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+            </div>
+             <div class="col-4">
+                    <img src="/static/logistics/images/page (2).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+            </div>
+             <div class="col-4">
+                    <img src="/static/logistics/images/page (1).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+                </div>
+             <div class="col-4">
+                    <img src="/static/logistics/images/page (2).jpg"  >
+                    <h4>Vintage short</h4>
+                    <p>#20,000.00</p>
+                </div>
+        </div>
+    </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                       <img src="/static/logistics/images/logo.jpg" width="125px">
+                        <p>Our Purpose is to Sustainably make th pleasure and benefits of sports accessile to many.</p>
+                    </div>
+                    <div class="footer-col-2">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Home</li>
+                            <li>Blog</li>
+                            <li>About us</li>
+                            <li>Contact us</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Follow us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class=" copyright">&copy; {% now 'Y' %} - CT </p>
+            </div>
+        </div>
+
+
+    <script >
+        var MenuItems=document.getElementById("MenuItems");
+        MenuItems.style.maxHeight ="0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight =="0px")
+                {
+                    MenuItems.style.maxHeight ="200px";
+
+                }
+            else
+                {
+                    MenuItems.style.maxHeight ="0px";
+
+                }
+            }
+
+    </script>
+    </body>
+</html>
