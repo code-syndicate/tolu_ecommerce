@@ -1,0 +1,155 @@
+<!-- HomePage for Tolu's E-Commerce Site. DO NOT EDIT!!! -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        FastBuy | cheap products with high quality
+    </title>
+
+    <meta charset="utf-8">
+    <meta name=" description" content="E-commerce Site">
+    <meta name=" author" content=" Timileyin Pelumi ">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="{% static 'logistics/images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'logistics/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static 'logistics/fontawesome/css/all.min.css' %}">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+        }
+    </style>
+
+<body id="root">
+    {% block body %}
+
+
+    <div class="row-padding">
+
+        <div class="w3-quarter w3-padding-16 w3-hide-small w3-sidebar w3-card w3-collapse" style="width:300px;">
+            <p class="w3-center w3-small w3-opacity-min " style="font-family:raleway;font-weight: bold;"> Account
+                Profile </p>
+            <img class="w3-image  w3-padding  w3-center w3-circle"
+                src="https://www.gravatar.com/avatar/{{ request.user.id }}" width="100" height="100">
+
+            <ul class="w3-ul">
+                <li class="w3-padding w3-margin-bottom  w3-medium " style="font-weight: bold;border: none;">
+                    <i class="fas fa-user w3-padding"></i> {{ request.user.get_full_name }}
+                </li>
+                <li class="w3-padding w3-margin-bottom  w3-medium " style="font-weight: bold;border: none;">
+                    <i class="fas fa-shopping-cart w3-padding"></i> Cart
+                </li>
+
+                <li class="w3-padding w3-margin-bottom  w3-medium " style="font-weight: bold;border: none;">
+                    <i class="fas fa-shopping-basket w3-padding"></i> Orders
+                </li>
+                <li class="w3-padding w3-margin-bottom  w3-medium " style="font-weight: bold;border: none;">
+                    <i class="fas fa-shipping-fast w3-padding"></i> Shipped
+                </li>
+                <li class="w3-padding w3-margin-bottom  w3-medium " style="font-weight: bold;border: none;">
+                    <i class="fas fa-ship w3-padding"></i> To be Shipped
+                </li>
+                <li class="w3-padding w3-margin-bottom  w3-medium " style="font-weight: bold;border: none;">
+                    <i class="fas fa-user-cog w3-padding"></i> Manage account
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="w3-rest w3-main w3-center " style="margin-left: 300px;">
+            <div class="w3-top w3-border w3-center w3-padding" style="z-index: 2;background-color: white;">
+
+                <form method="POST" class="w3-bar    w3-medium  " style="width:100%;max-width: 900px;" action="">
+                    {% csrf_token %}
+                    <i class="fas fa-bars fa-2x w3-hide-large w3-padding-small  w3-left"
+                        style="display: inline-block;"></i>
+                    <input style="width:65%;min-width: 60%;" class="w3-input w3-round w3-border w3-bar-item w3-large "
+                        type="text" placeholder="Search millions of items...">
+                    <input style="width: 10%;min-width: 85px;"
+                        class="w3-button w3-blue w3-right  w3-round-large w3-large w3-bar-item " type="submit"
+                        value="search">
+                </form>
+            </div>
+
+
+            <p class=" w3-text-white  w3-black w3-xlarge"
+                style="text-align:left;padding:85px 20px 5px 15px; font-weight:bold;font-family:Raleway;"> Categories
+            </p>
+
+            <div class="category-bars w3-white w3-row-padding-16 w3-round-large" style="margin-top: 10px;">
+
+                {% for cat in categories_1 %}
+
+                <div class="w3-third w3-padding-small ">
+                    <img class="w3-image w3-round-large " width="400" height="300" src="{{cat.cover_picture.url}}"
+                        alt="{{ cat.category_name }}">
+                    <p class="w3-medium w3-blue w3-padding-small" style="font-weight: bold;"> {{cat.category_name}} </p>
+
+
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+
+
+            <div class="category-bars w3-row-padding-16 w3-round-large" style="background-color: crimson;">
+
+                {% for cat in categories_2 %}
+
+                <div class="w3-third w3-padding-small ">
+                    <img class="w3-image w3-round-large " width="400" height="300" src="{{cat.cover_picture.url}}"
+                        alt="{{ cat.category_name }}">
+                    <p class="w3-medium w3-blue w3-padding-small" style="font-weight: bold;"> {{cat.category_name}} </p>
+
+
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+
+            <!-- <p class=" w3-text-white  w3-black w3-xlarge" style="text-align:left;padding:85px 20px 5px 15px; font-weight:bold;font-family:Raleway;"> Hot Picks </p> -->
+
+            <div class="products w3-padding " style="overflow-x:scroll;white-space:nowrap;width:100%;">
+                {% for product in products %}
+                <div class="w3-cell w3-padding w3-margin w3-border" style="display:inline-flexbox;">
+                    <img class="w3-img" src="{{product.picture.url}}" width="200" height="200"
+                        alt="{{product.product_name}}">
+                    <P class="w3-small"> <del style="font-style: italic;font-weight: lighter;"
+                            class="w3-small w3-text-red"> ${{product.price_per_unit}}</del> <span class="w3-opacity-max"
+                            style="font-weight: bold;"> -{{product.slash_percentage}}% </span> </P>
+                    <p class="w3-text-blue"> <i style="font-size: 1.25rem;font-weight: bold;"> ${{product.price}}</i>
+                    </p>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    {% endblock body %}
+</body>
+</head>
+
+</html>
